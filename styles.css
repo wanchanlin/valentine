@@ -56,3 +56,13 @@ body {
     margin:20px auto;
   }
 
+@media screen and (max-width: 480px) {
+  .no-button {
+    display: inline-block;
+    margin-top:  10px;
+    max-width: 480px
+
+  }
+  
+}
+
