@@ -8,7 +8,15 @@ const messages = [
     "I'm actually crying. Real tears. Typing is hard now. 💧",
     "My heart is literally breaking into 1,000 pieces... 🧩",
     "Ok fine, I’ll stop. I’ll go live in a cave. Alone. 🏔️",
-    "Just kidding! I'm not leaving until you say YES! ❤️"
+    "Just kidding! I'm not leaving until you say YES! ❤️",
+    "I’m currently writing my will. I'm leaving you my favorite hoodie. 👕",
+    "I just told my mom we were getting snacks. Now I have to call her back. 📞",
+    "Fine, I’ll go listen to sad songs in the rain... alone. 🌧️",
+    "I'm moving to Mars. Earth is too cold now. 🚀",
+    "But I already picked out our matching outfits! 👯",
+    "I have a 10-page PowerPoint on why you should say yes. 📊",
+    "If you say yes, I'll buy the good expensive ice cream. 🍦",
+    "Look at this face: 👁️👄👁️. How can you say no?"
 ];
 
 let messageIndex = 0;
