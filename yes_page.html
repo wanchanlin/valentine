@@ -5,50 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Knew you would say yes!</title>
     <link rel="stylesheet" href="./yes_style.css">
+    <style>
+        /* Basic styling to ensure visibility */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffeef2; /* Soft pink background */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container { text-align: center; }
+        .gif_container { margin-top: 20px; max-width: 400px; margin-left: auto; margin-right: auto; }
+        
+       
+    </style>
 </head>
 <body>
-    <div class="container">
-        <script>
-    const count = localStorage.getItem('rejectionCount') || 0;
-    const body = document.querySelector('body');
-
-    if (count > 0) {
-        document.body.innerHTML += `
-            <div style="text-align: center; font-family: sans-serif;">
-                <h1 class="header_text">Knew you would say yes! ❤️</h1>
-                <p>I forgive you for clicking "No" <b>${count}</b> times...</p>
-                <p>But I'm keeping the receipts! 😏</p>
-                  <div class="gif_container">
-            <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmo3c3l5ODh3ZGN6NHhhaDE2Mjg1ZjkwOXczdDFxbWM3dTBtaW9zaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/9XY4f3FgFTT4QlaYqa/giphy.gif">
-            </div>
-            </div>
-           
-            
-        `;
-
-    }
-   
-</script>
-
-        <!-- <h1 class="header_text">Knew you would say yes!</h1>
-        <p id="rejection-message"></p>
-        <div class="gif_container">
-            <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmo3c3l5ODh3ZGN6NHhhaDE2Mjg1ZjkwOXczdDFxbWM3dTBtaW9zaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/9XY4f3FgFTT4QlaYqa/giphy.gif">
+    <div class="container" id="main-content">
         </div>
-    </div>
-    <script>
-    // Get the count from localStorage
-    const count = localStorage.getItem('rejectionCount') || 0;
-    const display = document.getElementById('rejection-message');
 
-    if (count > 0) {
-        display.textContent = `It only took you ${count} rejections to realize we're meant to be!`;
-    } else {
-        display.textContent = "You said yes on the first try! I'm impressed!";
-    }
-    
-    // Optional: Clear the count so it resets for next time
-    localStorage.removeItem('rejectionCount');
-</script>                                                                      -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const count = localStorage.getItem('rejectionCount') || 0;
+            const container = document.getElementById('main-content');
+
+            let message = "";
+            let subMessage = "";
+
+            if (count > 0) {
+                message = `Knew you would say yes! ❤️`;
+                subMessage = `
+                    <p>I forgive you for clicking "No" <b>${count}</b> times...</p>
+                    <p class="receipt-text">But I'm keeping the receipts! 😏</p>
+                `;
+            } else {
+                message = `You said yes! ❤️`;
+                subMessage = `<p>On the very first try? I'm impressed! 😍</p>`;
+            }
+
+            container.innerHTML = `
+                <h1 class="header_text">${message}</h1>
+                ${subMessage}
+                <div class="gif_container">
+                    <div class="tenor-gif-embed" 
+                         data-postid="16888285" 
+                         data-share-method="host" 
+                         data-aspect-ratio="1.33333" 
+                         data-width="100%">
+                         <a href="https://tenor.com/view/hug-love-you-cute-kiss-pet-gif-16888285">Hug Love You GIF</a>
+                    </div>
+                </div>
+            `;
+
+            // Manually trigger the Tenor script to load the GIF after injection
+            const script = document.createElement("script");
+            script.src = "https://tenor.com/embed.js";
+            script.type = "text/javascript";
+            script.async = true;
+            document.body.appendChild(script);
+
+            // Optional: Reset count so they can try again next time
+            // localStorage.removeItem('rejectionCount');
+        });
+    </script>
 </body>
 </html>
